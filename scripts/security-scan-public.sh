@@ -85,14 +85,14 @@ echo ""
 # If you are publishing a skill and these checks fire, you have leaked
 # a real value somewhere — replace it with <your-X>.
 
-check "Hardcoded personal name (the user etc)" '\b<your-name>\b' '<your-name>|<your-name>\'s'
-check "Hardcoded GitHub username (in URLs)" 'github\.com/<your-github-username>' 'YOUR-GITHUB-USERNAME'
-check "Hardcoded email" '[a-zA-Z0-9._-]+@<your-email-domain>' '<your-email>|<your-cloudflare-email>'
-check "Hardcoded Tailscale IP" '<agent-vm-ip>\.[0-9]+\.[0-9]+\.[0-9]+' '<agent-vm-ip>|<laptop-ip>'
+check "Hardcoded personal name (the user etc)" '<your-name>'
+check "Hardcoded GitHub username (in URLs)" 'github\.com/<your-github-username>'
+check "Hardcoded email" '[a-zA-Z0-9._-]+@<your-email-domain>'
+check "Hardcoded Tailscale IP" '<agent-vm-ip>\.[0-9]+\.[0-9]+\.[0-9]+'
 check "Hardcoded bridge port" ':<bridge-port>\b'
-check "Hardcoded VM path" '/<agent-vm-home>/\.<service>' '~/\.<service>'
-check "Hardcoded laptop path" 'C:\\\\Users\\<windows-username>' '<username>'
-check "Hardcoded vault path" '~/\.<hermes-config-dir>/memories' '<hermes-vault>'
+check "Hardcoded VM path" '/<agent-vm-home>/\.<service>'
+check "Hardcoded laptop path" 'C:\\Users\<windows-username>'
+check "Hardcoded vault path" '~/<hermes-config-dir>/memories'
 check "Hardcoded Supabase PAT prefix" 'sbp_[a-f0-9]{8,}' 'sbp_<redacted>'
 check "Hardcoded GitHub PAT" 'ghp_[a-zA-Z0-9]{8,}'
 check "Hardcoded OpenAI key" 'sk-[a-zA-Z0-9]{8,}'
