@@ -44,6 +44,8 @@ After the scaffold and before architecture planning, a new `pick_israeli_extensi
 
 Skillsmith 100% compliant (62/62 checks pass on source). 0 personal references, 0 secrets in source. Ready for public mirror sync.
 
+> **Note for public mirrors:** The 6 "Israeli + Marketing" skills listed above (`shabbat-aware-scheduler`, `hebrew-voice-bot-builder`, `n8n-hebrew-workflows`, `greenapi-whatsapp-bot-builder`, `creative/popular-web-designs`, `creative/hyperframes`) live in the developer's local Hermes vault and are NOT bundled with this public release. If you cloned this repo and want full build-product functionality for Israeli-market products or marketing-asset generation, install them locally — they'll be auto-discovered. Without them, the corresponding `ship.md`, `deploy-to-cloudflare.md`, and `new-product.md` steps are marked `[vault-only]` and degrade gracefully (deploys proceed without Shabbat-window enforcement; launches can still happen without marketing assets — just less polished).
+
 ---
 
 ## [1.3.0] — 2026-06-24

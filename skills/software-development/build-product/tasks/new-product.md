@@ -99,6 +99,8 @@ curl http://localhost:8000/health  # Python (8000)
 </step>
 
 <step name="pick_israeli_extensions">
+**[vault-only]** — the Israeli-feature skills below live in the developer's local Hermes vault. If unavailable, skip this step (product will be built without Israeli-specific extensions).
+
 **Only when the product targets Israeli users** (Hebrew UI, Israeli market, Israeli business workflows). Otherwise skip this step.
 
 Based on the brief from `five_mandatory_questions`, decide which Israeli-feature skills to wire in:

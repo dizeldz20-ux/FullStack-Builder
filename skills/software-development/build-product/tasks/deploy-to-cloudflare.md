@@ -47,6 +47,8 @@ If unclear, **ask the user** with one focused question: "תעלה לי את זה
 </step>
 
 <step name="shabbat_deploy_check">
+**[vault-only]** — requires `shabbat-aware-scheduler` from the developer's local Hermes vault. If unavailable, skip this step (deploy will proceed without Shabbat-window enforcement).
+
 **Loop 18 — Israeli Deploy Window.** Before running the deploy task, check that the current time is not inside Shabbat or a Yom Tov window.
 
 ```bash

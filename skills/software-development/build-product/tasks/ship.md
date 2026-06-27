@@ -154,6 +154,8 @@ git push origin v1.X.Y
 </step>
 
 <step name="marketing_assets">
+**[vault-only]** — requires `creative/popular-web-designs` and `creative/hyperframes` from the developer's local Hermes vault. If unavailable, skip this entire step (the launch can still happen without marketing assets — just less polished).
+
 **Loop 19 — Marketing Asset Build.** Before announcing the launch, make sure the repo has marketing assets. Skip this step only when the user explicitly says "internal only" or "no marketing".
 
 1. **Pick the reference design** — invoke `popular-web-designs` and choose one of the 54 production design systems that matches the product's audience (e.g. Stripe for SaaS, Linear for productivity, Vercel for dev tools). Save the rendered template to `marketing/landing-template.html`.
