@@ -1,0 +1,102 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  skill-drift:
+    name: Skill drift (docs vs shipped)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build list of shipped skills
+        run: |
+          find skills -name SKILL.md -exec dirname {} \; \
+            | sed 's|^skills/||' | xargs -I{} basename {} | sort -u > /tmp/shipped.txt
+          echo "Shipped skills ($(wc -l < /tmp/shipped.txt)):"
+          cat /tmp/shipped.txt
+
+      - name: Verify all related_skills exist or are marked vault-only
+        run: |
+          set -e
+          find skills -name SKILL.md -exec dirname {} \; \
+            | sed 's|^skills/||' | xargs -I{} basename {} | sort -u > /tmp/shipped.txt
+
+          # Extract every skill reference from related_skills blocks in all SKILL.md files
+          for f in $(find skills -name SKILL.md); do
+            awk '/^---$/{c++; next} c==1' "$f" \
+              | grep -oE '^[[:space:]]*-[[:space:]]*[a-z][a-z0-9_/-]+' \
+              | sed 's/^[[:space:]]*-[[:space:]]*//' \
+              | sed 's|.*/||'
+          done | sort -u > /tmp/referenced.txt
+
+          UNSHIPPED=$(comm -23 /tmp/referenced.txt /tmp/shipped.txt)
+          echo "Un-shipped peer references:"
+          echo "$UNSHIPPED"
+
+          if [ -z "$(echo $UNSHIPPED | tr -d ' ')" ]; then
+            echo "✅ All related_skills are shipped"
+            exit 0
+          fi
+
+          # For each un-shipped peer, verify it's marked [vault-only] in tasks/ or SKILL.md
+          FAIL=0
+          for skill in $UNSHIPPED; do
+            # Grep for vault-only markers within the same context window as the skill name
+            if grep -rqE "\[vault-only\]" skills/ 2>/dev/null; then
+              # Found at least one vault-only marker; check if this skill is mentioned nearby
+              if awk '/\[vault-only\]/{flag=1; next} flag{print; if(/[a-z]/)count++; if(count>3){flag=0;count=0}}' skills/software-development/build-product/SKILL.md skills/software-development/build-product/tasks/*.md 2>/dev/null | grep -qE "\b$skill\b"; then
+                echo "  ✓ $skill — marked [vault-only]"
+              else
+                echo "  ✗ $skill — NOT marked [vault-only]"
+                FAIL=1
+              fi
+            else
+              echo "  ✗ $skill — no [vault-only] markers anywhere"
+              FAIL=1
+            fi
+          done
+
+          exit $FAIL
+
+      - name: Verify all skills mentioned in UPDATE.md are shipped or vault-only
+        run: |
+          set -e
+          find skills -name SKILL.md -exec dirname {} \; \
+            | sed 's|^skills/||' | xargs -I{} basename {} | sort -u > /tmp/shipped.txt
+
+          # Look only for skill names that look like real skills (have descriptive text nearby)
+          grep -hoE '`[a-z][a-z0-9_-]+`' UPDATE.md 2>/dev/null \
+            | tr -d '`' | sort -u > /tmp/claimed_in_update.txt
+
+          UNSHIPPED=$(comm -23 /tmp/claimed_in_update.txt /tmp/shipped.txt)
+
+          if [ -z "$(echo $UNSHIPPED | tr -d ' ')" ]; then
+            echo "✅ All UPDATE.md skill references are shipped"
+            exit 0
+          fi
+
+          # Allow un-shipped skills if UPDATE.md or CHANGELOG.md marks them as vault-only
+          FAIL=0
+          for skill in $UNSHIPPED; do
+            if grep -q "$skill.*vault-only\|vault-only.*$skill" UPDATE.md CHANGELOG.md skills/software-development/build-product/CHANGELOG.md 2>/dev/null; then
+              echo "  ✓ $skill — marked vault-only in docs"
+            else
+              echo "  ✗ $skill — claimed in UPDATE.md but not shipped and not vault-only"
+              FAIL=1
+            fi
+          done
+
+          exit $FAIL
+
+  security-scan:
+    name: Secret / PII scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run security scan
+        run: bash scripts/security-scan-public.sh .
