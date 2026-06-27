@@ -14,7 +14,7 @@ As a the user building a Supabase product, I want users to be able to sign in wi
 </when-to-use>
 
 <context>
-@context/user-defaults.md (if exists in this skill — falls back to build-product's @frameworks/user-defaults.md)
+User-stack defaults: fall back to `build-product/frameworks/user-defaults.md` (Three Rules + stack preferences) when this skill's own defaults are absent.
 </context>
 
 <references>
