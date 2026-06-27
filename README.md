@@ -33,8 +33,10 @@
 ### One-command install (recommended)
 
 ```bash
-# Clone into your Hermes skills directory
-git clone https://github.com/dizeldz20-ux/FullStack-Builder.git ~/.hermes/skills-extras/
+# Clone directly into the Hermes skills root (skills become auto-discoverable)
+# Note: a category prefix (software-development/, design/, devops/, dogfood/) is required.
+git clone https://github.com/dizeldz20-ux/FullStack-Builder.git /tmp/fsb && \
+  cp -r /tmp/fsb/skills/* ~/.hermes/skills/
 
 # Or install individual skills
 mkdir -p ~/.hermes/skills/software-development
