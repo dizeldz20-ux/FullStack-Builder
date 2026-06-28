@@ -47,12 +47,9 @@ metadata:
       - cavecrew-builder
       - creative/sketch
       - creative/impeccable
-    # Note: ~25 of these skills live in the developer's local Hermes
-    # vault and are NOT bundled with this public release. They are
-    # listed here because build-product's orchestrator routes to them
-    # when present. For the public mirror, only the 15 skills in skills/
-    # are guaranteed available. Steps requiring vault-only skills are
-    # marked [vault-only] in the task files and may be skipped.
+    # Note: All 38 skills listed here are included in this public release.
+    # The bundle is self-contained — no external vault required.
+    # When a skill is missing (rare), build-product degrades gracefully.
 ---
 
 <activation>

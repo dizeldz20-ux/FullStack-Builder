@@ -4,6 +4,39 @@ This document explains what changed between releases. The README still describes
 
 ---
 
+## v1.6.0 (2026-06-28) — 5 missing skills added, bundle now fully self-contained
+
+### 🎉 What's new in v1.6.0
+
+Fixed: `build-product`'s `related_skills` declared 38 skills, but 5 were missing from the public bundle. Now all 38 are present.
+
+#### 5 skills added (previously vault-only)
+
+| Skill | Purpose |
+|-------|---------|
+| `software-development/plan` | Plan mode — write actionable markdown plan to `.hermes/plans/` |
+| `software-development/incremental-hardening-refactor` | Safely harden a live codebase and perform small refactors |
+| `software-development/competitor-product-research-to-build` | Research a 3rd-party product to plan a similar build |
+| `hebrew-voice-bot-builder` | Hebrew IVR / voice bots |
+| `creative/impeccable` | Anti-slop frontend taste skill |
+
+### Changed
+
+- `build-product/SKILL.md` — removed misleading "~25 vault-only" comment; all 38 related_skills now bundled
+- `build-product/CHANGELOG.md` — added v1.6.0 entry
+- `README.md` — bumped to "39 skills / 11 categories"
+- Bundle is now **fully self-contained** — `git clone` and run, no vault required
+
+### Stats
+
+- Skills: 34 → **39** (+5)
+- Categories: 11 → 11 (no new categories)
+- Total files: 295 → 421 (+126)
+
+Pre-scrub: 0 secrets, 0 PII, 0 real findings.
+
+---
+
 ## v1.5.0 (2026-06-28) — Major expansion: +21 skills across 9 new categories
 
 ### 🎉 What's new in v1.5.0

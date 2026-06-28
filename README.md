@@ -1,15 +1,15 @@
 # FullStack Builder
 
-> A suite of **34 Hermes skills** across **11 categories** for end-to-end product building — from idea to deployed, monitored, monetized, and supported production app.
+> A suite of **39 Hermes skills** across **11 categories** for end-to-end product building — from idea to deployed, monitored, monetized, and supported production app.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Hermes](https://img.shields.io/badge/Hermes-skill-blueviolet)](https://hermes.nousresearch.com)
 [![Skillsmith](https://img.shields.io/badge/Skillsmith-compliant-green)](https://github.com/smith-horn/skillsmith)
-[![Version](https://img.shields.io/badge/version-v1.5.0-blue)](UPDATE.md)
+[![Version](https://img.shields.io/badge/version-v1.6.0-blue)](UPDATE.md)
 
 ## What is this?
 
-**FullStack Builder** is a collection of **34 skills** across **11 categories** for [Hermes](https://hermes.nousresearch.com) that work together to take you from a product idea to a deployed, monitored, monetized, and supported production app. Updated regularly; see [UPDATE.md](UPDATE.md) for changelog.
+**FullStack Builder** is a collection of **39 skills** across **11 categories** for [Hermes](https://hermes.nousresearch.com) that work together to take you from a product idea to a deployed, monitored, monetized, and supported production app. Updated regularly; see [UPDATE.md](UPDATE.md) for changelog.
 
 ### Skills by lifecycle phase
 
@@ -29,9 +29,9 @@
 | **Monetize** | `pricing-monetization` *(new in v1.2.1)* | Pricing models + Stripe + paywall |
 | **Support** | `customer-support-templates` *(new in v1.2.1)* | Welcome/onboarding/churn/FAQ |
 
-### Additional skills (v1.5.0)
+### Additional skills (v1.5.0 + v1.6.0)
 
-Beyond the 13 core lifecycle skills, v1.5.0 adds **21 more skills** across 9 additional categories:
+Beyond the 13 core lifecycle skills, v1.5.0 + v1.6.0 add **26 more skills** across 9 additional categories:
 
 | Category | Skill | Purpose |
 |----------|-------|---------|
@@ -41,15 +41,20 @@ Beyond the 13 core lifecycle skills, v1.5.0 adds **21 more skills** across 9 add
 | **Creative** | `creative/hyperframes` | HTML-based video compositions |
 | **Creative** | `creative/popular-web-designs` | 54 production design systems |
 | **Creative** | `creative/sketch` | Throwaway HTML mockups |
+| **Creative** | `creative/impeccable` *(new in v1.6.0)* | Anti-slop frontend taste skill |
 | **Design** | `design/` | UI design system skills |
 | **DevOps** | `devops/` | Deployment & infrastructure skills |
 | **Dogfood** | `dogfood` | Exploratory QA of web apps |
 | **Israeli** | `greenapi-whatsapp-bot-builder` | Green API WhatsApp bot |
+| **Israeli** | `hebrew-voice-bot-builder` *(new in v1.6.0)* | Hebrew IVR / voice bots |
 | **Israeli** | `n8n-hebrew-workflows` | n8n 2.0 with Israeli APIs |
 | **Israeli** | `shabbat-aware-scheduler` | Block deploys during Shabbat/Yom Tov |
+| **Dev** | `software-development/competitor-product-research-to-build` *(new in v1.6.0)* | 3rd-party product research |
 | **Dev** | `software-development/html-structured-extract` | Extract rows from HTML pages |
+| **Dev** | `software-development/incremental-hardening-refactor` *(new in v1.6.0)* | Safely harden a live codebase |
 | **Dev** | `software-development/node-inspect-debugger` | Node.js `--inspect` debugging |
 | **Dev** | `software-development/oauth-helper` | OAuth login automation |
+| **Dev** | `software-development/plan` *(new in v1.6.0)* | Plan mode for writeable markdown plans |
 | **Dev** | `software-development/python-debugpy` | Python debugpy (DAP) |
 | **Dev** | `software-development/requesting-code-review` | Pre-commit review automation |
 | **Dev** | `software-development/spike` | Throwaway experiments |
@@ -58,7 +63,7 @@ Beyond the 13 core lifecycle skills, v1.5.0 adds **21 more skills** across 9 add
 | **Dev** | `software-development/test-driven-development` | TDD: RED-GREEN-REFACTOR |
 | **Dev** | `software-development/writing-plans` | Bite-sized implementation plans |
 
-**Total**: 34 skills across 11 categories (13 core + 21 additional).
+**Total**: 39 skills across 11 categories (13 core + 26 additional).
 
 ## Installation
 

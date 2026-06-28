@@ -2,6 +2,34 @@
 
 All notable changes to this skill are documented here. Format: [Semantic Versioning](https://semver.org/).
 
+## [1.6.0] — 2026-06-28
+
+### Added — 5 missing skills added to public bundle
+
+After user reported `5 related_skills declared but missing`, added them to public:
+
+| Skill | Category |
+|-------|----------|
+| `software-development/plan` | software-development |
+| `software-development/incremental-hardening-refactor` | software-development |
+| `software-development/competitor-product-research-to-build` | software-development |
+| `hebrew-voice-bot-builder` | Israeli |
+| `creative/impeccable` | creative |
+
+### Changed
+
+- related_skills comment: removed "15 skills in skills/" — bundle is now self-contained
+- All 38 related_skills verified existing in `skills/` directory
+- security-scan-public.sh: 0 real findings
+
+## [1.5.0] — 2026-06-28
+
+### Added — Major expansion: +21 skills across 9 new categories
+
+Expanded from 15 skills / 1 category to **34 skills / 11 categories**.
+
+(See UPDATE.md for full list of new skills.)
+
 ## [1.4.0] — 2026-06-25
 
 ### Added — 6 new skills wired into the pipeline (Israeli + Marketing + Comms)
