@@ -4,6 +4,54 @@ This document explains what changed between releases. The README still describes
 
 ---
 
+## v1.5.0 (2026-06-28) — Major expansion: +21 skills across 9 new categories
+
+### 🎉 What's new in v1.5.0
+
+Expanded from **15 skills / 1 category** to **34 skills / 11 categories**.
+
+#### 21 new skills across 9 additional categories
+
+**Cavecrew (3 skills)** — subagent decision guides:
+- `cavecrew-builder` — Surgical 1-2 file edit subagent
+- `cavecrew-investigator` — Read-only code locator subagent
+- `cavecrew-reviewer` — Diff/branch/file reviewer subagent
+
+**Creative (3 skills)** — design & video tools:
+- `creative/hyperframes` — HTML-based video compositions
+- `creative/popular-web-designs` — 54 production design systems
+- `creative/sketch` — Throwaway HTML mockups
+
+**Design (1 category)** — UI design system skills
+
+**DevOps (1 category)** — deployment & infrastructure skills
+
+**Dogfood (1 skill)** — exploratory QA of web apps
+
+**Israeli (3 skills)** — Israeli/Hebrew-specific:
+- `greenapi-whatsapp-bot-builder` — Green API WhatsApp bot
+- `n8n-hebrew-workflows` — n8n 2.0 with Israeli APIs
+- `shabbat-aware-scheduler` — Block deploys during Shabbat/Yom Tov
+
+**Software development (9 new skills)**:
+- `html-structured-extract` — Extract rows from HTML pages
+- `node-inspect-debugger` — Node.js `--inspect` debugging
+- `oauth-helper` — OAuth login automation
+- `python-debugpy` — Python debugpy (DAP)
+- `requesting-code-review` — Pre-commit review automation
+- `spike` — Throwaway experiments
+- `subagent-driven-development` — Plans via delegate_task subagents
+- `systematic-debugging` — 4-phase root cause debugging
+- `test-driven-development` — TDD: RED-GREEN-REFACTOR
+- `writing-plans` — Bite-sized implementation plans
+
+### Changed
+- README — updated from "15 skills" → "34 skills / 11 categories"
+- All skills pre-scrubbed: 0 secrets, 0 PII, 0 personal data
+- 102 new files added (skills + references + templates)
+
+---
+
 ## v1.4.0 (2026-06-25) — Israeli + Marketing + Comms
 
 ### 🎉 What's new in v1.4.0
